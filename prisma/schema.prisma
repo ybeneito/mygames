@@ -66,3 +66,15 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Game {
+    id String @id @default(cuid())
+    name String @unique
+    description String
+    imgLink String
+    prix String?
+    players String
+    minage Int
+    year DateTime?
+    upvote Int?
+}
