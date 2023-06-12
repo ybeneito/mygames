@@ -18,5 +18,12 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {protocol: "https", hostname: "cdn.cultura.com"},
+      {protocol: "https", hostname: "www.espritjeu.com"},
+      {protocol: "https", hostname: "m.media-amazon.com"},
+    ]
+  }
 };
 export default config;

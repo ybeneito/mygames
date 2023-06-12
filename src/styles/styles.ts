@@ -1,0 +1,1 @@
+export const grid = "grid gap-3 m-auto pt-3 mt-3 text-center md:grid-cols-2 lg:w-2/3"

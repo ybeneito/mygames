@@ -1,7 +1,8 @@
-import { type NextPage } from "next";
+import type { NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import GameCard from "~/components/game-card";
 import { api } from "~/utils/api";
+import { grid } from "../styles/styles"
 
 const Home: NextPage = () => {
   const {data} = api.games.getAll.useQuery()
@@ -9,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <>
       <AuthShowcase />
-      <div className="flex flex-wrap gap-5 w-3/4 justify-center m-auto py-5 ">
+      <div className={grid}>
       {data?.map((game) => (
       <GameCard {...game} key={game.id}/>)
       )}
@@ -24,7 +25,7 @@ const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 mt-3">
       <p className="text-center text-2xl text-white">
         {sessionData &&  
         <span>{sessionData?.user.name}</span>
