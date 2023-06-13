@@ -23,6 +23,7 @@ const config = {
       {protocol: "https", hostname: "cdn.cultura.com"},
       {protocol: "https", hostname: "www.espritjeu.com"},
       {protocol: "https", hostname: "m.media-amazon.com"},
+      {protocol: "https", hostname: "www.lesjoueursdudimanche.fr"}
     ]
   }
 };

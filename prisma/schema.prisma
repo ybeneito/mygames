@@ -77,7 +77,7 @@ model Game {
     imgLink String
     prix String?
     players String
-    minage Int
+    minage String
     year DateTime?
     upvote Int?
 }
