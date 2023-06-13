@@ -13,6 +13,5 @@ export const gameRouter = createTRPCRouter({
     return ctx.prisma.game.findUnique({
       where: {id: input.id}
     })
-  })
-
+  }),
 });

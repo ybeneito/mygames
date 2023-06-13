@@ -2,10 +2,15 @@ import type { NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import GameCard from "~/components/game-card";
 import { api } from "~/utils/api";
-import { grid } from "../styles/styles"
+import { center, grid } from "../styles/styles"
+import Link from "next/link";
+import { LoadingPage } from "~/components/loading";
+
 
 const Home: NextPage = () => {
-  const {data} = api.games.getAll.useQuery()
+  const {data, isLoading} = api.games.getAll.useQuery()
+  if ( isLoading ) return <LoadingPage />
+  if (!data) return <div className={center}>Une erreur est survenue </div>
 
   return (
     <>
@@ -15,6 +20,8 @@ const Home: NextPage = () => {
       <GameCard {...game} key={game.id}/>)
       )}
       </div>
+      <Link href="/addGame">Ajouter</Link>
+
     </>
   );
 };
